@@ -34,31 +34,15 @@ for i in range(6):
 
     print(format_(left), format_(right), format_((right + left) / 2))
 
-# for i in range(1, 4):
-#     left = float(format_(t_n - q * i).replace(",", "."))
-#     right = float(format_(t_n + q * i).replace(",", "."))
-#     print(left, right, end=" ")
-#
-#     cnt = 0
-#     for t in data:
-#         if left <= t <= right:
-#             cnt += 1
-#     print(cnt, cnt / n)
-
-# lst = [0 for x in range(6)]
-#
-# for x in data:
-#     lst[(int(x * 100) - 472) // 10] += 1
-
-
 plt.hist(data, color='white', edgecolor='black', bins=5, density=True)
 
 x = [data_mn + (data_mx - data_mn) / 100 * i for i in range(101)]
-plt.plot(x, [p_max * e ** (-(t - t_n)**2 / (2 * q**2)) for t in x])
+plt.plot(x, [p_max * e ** (-(t - t_n)**2 / (2 * q**2)) for t in x], label="""Функция плотности распределения\n<t> = 4,99 c\nσ = 0,1129 c""")
 plt.grid(True)
 
 plt.xlabel("t, c")
 plt.ylabel("ΔN / (N Δt)")
+plt.legend(loc=2)
 plt.show()
 
 

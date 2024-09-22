@@ -1,0 +1,2 @@
+38.180.45.252:65000/
+https://freemyip.com/update?token=17e2588feb0b0b0970f60d28&domain=khr.freemyip.com&myip=38.180.45.252

@@ -11,9 +11,11 @@ def main():
     y0 = int(input("Введите начальную высоту в м: "))
     alpha = int(input("Введите начальный угол в градусах: "))
 
-    v_x = v * math.cos(alpha * math.pi / 180)
+    print(v * math.cos(alpha * math.pi / 180))
 
-    v_y = v * math.sin(alpha * math.pi / 180)
+    v_x = round(v * math.cos(alpha * math.pi / 180), 2)
+
+    v_y = round(v * math.sin(alpha * math.pi / 180), 2)
 
     t_max = (v_y + (v_y**2 + 2 * g * y0)**.5) / g
 

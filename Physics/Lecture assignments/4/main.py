@@ -5,12 +5,13 @@ from Speed import Speed
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.animation as animation
-from random import randint
+
+
+dt = 0.025
 
 m1 = float(input("Введите массу первого тела в кг: "))
 v1_x, v1_y = [float(x) for x in input(r"Введите модуль-вектор через пробел скорости первого тела в м/с: ").split()]
-m1 = 10
-v1_x, v1_y = 10, 20
+
 v1 = Speed(v1_x, v1_y)
 
 m2 = float(input("Введите массу второго тела в кг: "))
@@ -52,7 +53,7 @@ for i in range(len(simulation.balls)):
 
 
 def update(frame):
-    simulation.simulate(0.05)
+    simulation.simulate(dt)
 
     for i in range(len(simulation.balls)):
         ball = simulation.balls[i]
@@ -66,5 +67,5 @@ def update(frame):
 
 
 ax.axis('equal')
-ani = animation.FuncAnimation(fig=fig, func=update, frames=100, interval=10)
+ani = animation.FuncAnimation(fig=fig, func=update, interval=0)
 plt.show()

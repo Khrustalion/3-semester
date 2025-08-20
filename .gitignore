@@ -4,3 +4,7 @@
 *.spec
 *.txt
 *.zip
+
+*\.idea
+*\bin
+*\obj
